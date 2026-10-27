@@ -6,8 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/base.nix
-    ./modules/packages.nix
-    ./modules/desktop.nix
-    ./modules/niri.nix
+    ./modules/packages
+    ./modules/desktop
   ];
 }
