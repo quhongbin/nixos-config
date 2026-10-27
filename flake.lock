@@ -1,0 +1,79 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "niri-config",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763992789,
+        "narHash": "sha256-WHkdBlw6oyxXIra/vQPYLtqY+3G8dUVZM8bEXk0t8x4=",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz"
+      }
+    },
+    "niri-config": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1791204436,
+        "narHash": "sha256-94DdDo2fYCtjy1n/NIiWNggl0rxq7kapCQNxim5ghqk=",
+        "owner": "quhongbin",
+        "repo": "niri-config",
+        "rev": "0a85cbfe7ceb875efac02b9554423a2855e8cab0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quhongbin",
+        "repo": "niri-config",
+        "rev": "0a85cbfe7ceb875efac02b9554423a2855e8cab0",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1767313136,
+        "narHash": "sha256-3zSML8xJhOT2kRBCNUpniZSCeCBCPA3KGsRYh+KdtbU=",
+        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.813814.ac62194c3917/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-25.05/nixexprs.tar.xz"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1793015021,
+        "narHash": "sha256-Ee5BWo8sh3pGt70QUdRajnaginqFmWvrtdBc4gJzhks=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "718f670e845328e9c2cecdd832835712b2cbd065",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "niri-config": "niri-config",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
