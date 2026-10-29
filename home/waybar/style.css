@@ -1,0 +1,140 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK SC", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(24, 24, 37, 0.85);
+    color: #cdd6f4;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ---- 通用模块样式 ---- */
+#custom-apps,
+#custom-bluetooth,
+#custom-usb,
+#network,
+#memory,
+#clock,
+#pulseaudio,
+#custom-power {
+    padding: 0 10px;
+    margin: 0 2px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background-color 0.2s;
+}
+
+#custom-apps:hover,
+#custom-bluetooth:hover,
+#custom-usb:hover,
+#network:hover,
+#memory:hover,
+#clock:hover,
+#pulseaudio:hover,
+#custom-power:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- 程序启动器 ---- */
+#custom-apps {
+    color: #89b4fa;
+    font-size: 15px;
+}
+
+/* ---- 蓝牙 ---- */
+#custom-bluetooth {
+    color: #89b4fa;
+}
+#custom-bluetooth.off {
+    color: #a6adc8;
+}
+#custom-bluetooth.disabled {
+    color: #a6adc8;
+}
+#custom-bluetooth.connected {
+    color: #a6e3a1;
+}
+
+/* ---- U 盘 ---- */
+#custom-usb {
+    color: #f9e2af;
+}
+#custom-usb.none {
+    color: #a6adc8;
+}
+
+/* ---- 网络 ---- */
+#network {
+    color: #89dceb;
+}
+#network.disconnected {
+    color: #f38ba8;
+}
+
+/* ---- 内存 ---- */
+#memory {
+    color: #cba6f7;
+}
+
+/* ---- 时钟 ---- */
+#clock {
+    color: #f5c2e7;
+    font-weight: bold;
+}
+
+/* ---- 音频 ---- */
+#pulseaudio {
+    color: #94e2d5;
+}
+#pulseaudio.muted {
+    color: #a6adc8;
+}
+
+/* ---- 电源 ---- */
+#custom-power {
+    color: #f38ba8;
+    font-size: 15px;
+}
+
+/* ---- 提示框 ---- */
+tooltip {
+    background: rgba(24, 24, 37, 0.95);
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    border-radius: 8px;
+}
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* ---- 启动器 ---- */
+#window {
+    background-color: rgba(24, 24, 24, 0.6); /* 半透明深色背景 */
+    border-radius: 16px;                     /* 圆角半径 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* 外部阴影，增加层次感 */
+    font-size: 16px;
+}
+
+#input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+#entry {
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 2px 5px;
+}
+
+#entry:selected {
+    background-color: rgba(100, 150, 255, 0.8); /* 醒目的选中色 */
+    color: #ffffff;
+}
