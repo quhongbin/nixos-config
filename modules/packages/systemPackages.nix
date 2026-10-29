@@ -7,10 +7,7 @@
     wget
     git
     kitty
-    alacritty
-    fuzzel
     xwayland-satellite
-    mako
     wl-clipboard
     brightnessctl
     playerctl

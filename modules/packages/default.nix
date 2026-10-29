@@ -7,5 +7,6 @@
     ./zsh.nix
     ./npm.nix
     ./gnupg.nix
+    ./kitty.nix
   ];
 }
