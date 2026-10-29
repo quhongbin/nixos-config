@@ -3,6 +3,23 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792818383,
+        "narHash": "sha256-199i7ubVSXTMl+0AAlL7cVCXSjcI+jWByMcimYjeMX0=",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz"
+      }
+    },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
           "niri-config",
           "nixpkgs"
         ]
@@ -20,7 +37,7 @@
     },
     "niri-config": {
       "inputs": {
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
@@ -69,6 +86,7 @@
     },
     "root": {
       "inputs": {
+        "home-manager": "home-manager",
         "niri-config": "niri-config",
         "nixpkgs": "nixpkgs_2"
       }

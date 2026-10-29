@@ -6,6 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/base.nix
+    ./modules/home-manager.nix
     ./modules/packages
     ./modules/desktop
   ];
