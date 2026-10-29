@@ -11,6 +11,15 @@ in
   # 构建并安装 niri（Wayland 合成器）。
   programs.niri.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    fuzzel # Mod+D application launcher
+    mako   # wayland notication daemon process
+	swayidle
+	swaylock # lock screen
+	xdg-desktop-portal-gtk # screen share
+	xwayland-satellite # x11 capacibility
+	udiskie # portal disk manager
+  ];
   # 把仓库里的 config.kdl 与 dms/ 片段链接到用户家目录。
   # config.kdl 末尾通过 include "dms/binds.kdl" 引用 dms 下的片段。
   systemd.tmpfiles.rules = [
