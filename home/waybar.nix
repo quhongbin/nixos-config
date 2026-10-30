@@ -17,8 +17,8 @@
         "margin-right" = 8;
 
         "modules-left" = [ "custom/apps" "custom/bluetooth" ];
-        "modules-center" = [ "clock" ];
-        "modules-right" = [ "custom/usb" "network" "memory" "pulseaudio" "custom/power" ];
+        "modules-center" = [ "clock" "mpris" ];
+        "modules-right" = [ "backlight" "custom/usb" "network" "memory" "pulseaudio" "custom/power" ];
 
         # 程序选择栏 (启动器)
         "custom/apps" = {
@@ -58,9 +58,32 @@
         # 内存
         memory = {
           interval = 5;
-          format = "󰍛  {used:0.1f}/{total:0.1f} GiB";
+          "format" = "󰍛  {used:0.1f}/{total:0.1f} GiB";
           "tooltip-format" = "Momery Usage {percentage}%";
         };
+
+	# 音频播放
+	"mpris" = {
+	    "format" = "{player_icon} {dynamic}";
+	    "format-paused" = "{status_icon} <i>{dynamic}</i>";
+	    "player-icons" = {
+		"default" = "▶";
+		"spotify" = "";
+		"firefox" = "";
+	    };
+	    "status-icons" = {
+		"paused" = "⏸";
+		"playing" = "▶";
+	    };
+	    "dynamic-order" = ["title" "artist"];
+	    "dynamic-separator" = " - ";
+	    "title-len" = 30;
+	    "artist-len" = 20;
+	    "tooltip-format" = "{player} ({status})\n{title}\n{artist}\n{album}";
+	    "on-click" = "playerctl play-pause";
+	    "on-scroll-up" = "playerctl volume 0.05+";
+	    "on-scroll-down" = "playerctl volume 0.05-";
+	};
 
         # 日期时间
         clock = {
@@ -69,17 +92,30 @@
           "tooltip-format" = "<tt>{calendar}</tt>";
         };
 
+        # 亮度调节(backlight)
+        backlight = {
+          format = "{percent}% {icon}";
+	    "format-icons" = ["󰃝" "󰃞" "󰃟"];
+	    "on-scroll-up" = "brightnessctl s 1%+";
+	    "on-scroll-down" = "brightnessctl s 1%-";
+	    "on-click" = "brightnessctl s 100%";
+	    "on-click-right" = "brightnessctl s 0";
+        };
+
         # 音频
         pulseaudio = {
           format = "{icon}  {volume}%";
-          "format-muted" = "󰝟  Quite";
+          "format-muted" = "󰝟  Muted";
           "format-icons" = {
             headphone = "󰋋";
             default = [ "󰕿" "󰖀" "󰕾" ];
           };
           "scroll-step" = 5;
-          "on-click" = "pavucontrol";
-        };
+	  "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "on-scroll-up" = "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%+";
+          "on-scroll-down" = "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 1%-";
+          "tooltip" = true;
+       };
 
         # 开关机 (电源菜单)
         "custom/power" = {

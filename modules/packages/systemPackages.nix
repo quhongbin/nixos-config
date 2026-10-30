@@ -12,5 +12,6 @@
     brightnessctl
     playerctl
     google-chrome
+    wireplumber
   ];
 }
