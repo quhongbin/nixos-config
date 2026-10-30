@@ -13,14 +13,33 @@
     };
   };
 
-  outputs = { self, nixpkgs, niri-config, home-manager }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, niri-config, home-manager }:
+    let
       system = "x86_64-linux";
-      specialArgs = { inherit niri-config; };
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-      ];
+      # 各主机共享的 extra specialArgs（如 niri-config flake）。
+      baseSpecialArgs = { inherit niri-config; };
+    in
+    {
+      nixosConfigurations = {
+        # 物理机：NVIDIA GTX 1050 Ti。
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = baseSpecialArgs // { host = "laptop"; };
+          modules = [
+            ./hosts/laptop
+            home-manager.nixosModules.home-manager
+          ];
+        };
+
+        # VMware 虚拟机。
+        vmware = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = baseSpecialArgs // { host = "vmware"; };
+          modules = [
+            ./hosts/vmware
+            home-manager.nixosModules.home-manager
+          ];
+        };
+      };
     };
-  };
 }
