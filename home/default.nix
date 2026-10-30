@@ -9,5 +9,6 @@
     ./waybar.nix
     ./wofi.nix
     ./zsh.nix
+    ./i18n.nix
   ];
 }
