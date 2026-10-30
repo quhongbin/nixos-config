@@ -1,7 +1,13 @@
 # waybar 配置：home-manager 管理。
 # 生成 ~/.config/waybar/config 与 ~/.config/waybar/style.css，并链接 scripts/。
-{ ... }:
+{ lib, host, ... }:
 
+let
+  isLaptop = host == "laptop";
+  # backlight（屏幕背光）只属于 laptop；VMware 虚拟机无物理背光。
+  modulesRight = (lib.optionals isLaptop [ "backlight" ])
+    ++ [ "custom/usb" "network" "memory" "pulseaudio" "custom/power" ];
+in
 {
   programs.waybar = {
     enable = true;
@@ -18,7 +24,7 @@
 
         "modules-left" = [ "custom/apps" "custom/bluetooth" ];
         "modules-center" = [ "clock" "mpris" ];
-        "modules-right" = [ "backlight" "custom/usb" "network" "memory" "pulseaudio" "custom/power" ];
+        "modules-right" = modulesRight;
 
         # 程序选择栏 (启动器)
         "custom/apps" = {
@@ -92,16 +98,6 @@
           "tooltip-format" = "<tt>{calendar}</tt>";
         };
 
-        # 亮度调节(backlight)
-        backlight = {
-          format = "{percent}% {icon}";
-	    "format-icons" = ["󰃝" "󰃞" "󰃟"];
-	    "on-scroll-up" = "brightnessctl s 1%+";
-	    "on-scroll-down" = "brightnessctl s 1%-";
-	    "on-click" = "brightnessctl s 100%";
-	    "on-click-right" = "brightnessctl s 0";
-        };
-
         # 音频
         pulseaudio = {
           format = "{icon}  {volume}%";
@@ -123,7 +119,17 @@
           tooltip = "Power Menu";
           "on-click" = "~/.config/waybar/scripts/power.sh";
         };
-      };
+      } // (lib.optionalAttrs isLaptop {
+        # 亮度调节(backlight)：只属于 laptop。
+        backlight = {
+          format = "{percent}% {icon}";
+          "format-icons" = [ "󰃝" "󰃞" "󰃟" ];
+          "on-scroll-up" = "brightnessctl s 1%+";
+          "on-scroll-down" = "brightnessctl s 1%-";
+          "on-click" = "brightnessctl s 100%";
+          "on-click-right" = "brightnessctl s 0";
+        };
+      });
     };
 
     style = ./waybar/style.css;

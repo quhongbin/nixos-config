@@ -8,5 +8,6 @@
     ./swaybg.nix
     ./waybar.nix
     ./wofi.nix
+    ./zsh.nix
   ];
 }
