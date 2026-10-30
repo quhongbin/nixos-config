@@ -1,12 +1,8 @@
-# 图形驱动：兼容 VMware 与 NVIDIA 1050 Ti。
+# 显卡驱动：NVIDIA GTX 1050 Ti（仅 laptop 物理机使用）。
 { ... }:
 
 {
-  # 同时兼容 VMware 虚拟机（vmware）与物理机 NVIDIA 1050 Ti（nvidia）。
-  services.xserver.videoDrivers = [ "nvidia" "vmware" ];
-
-  # 图形栈。
-  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # NVIDIA GTX 1050 Ti (Pascal)：
   # - 新版 Game Ready 驱动(590/595)已不再支持 Pascal，需用 legacy_580 长期支持分支；

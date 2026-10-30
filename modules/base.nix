@@ -40,6 +40,10 @@
   # 国际化。
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # zsh：系统级启用（写入 /etc/shells、生成 /etc/zshrc 带 nix PATH）。
+  # 用户级插件/语法高亮等由 home-manager 管理，见 home/zsh.nix。
+  programs.zsh.enable = true;
+
   # 用户。
   users.users.xiaoqu = {
     isNormalUser = true;

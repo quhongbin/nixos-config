@@ -9,9 +9,10 @@
     kitty
     xwayland-satellite
     wl-clipboard
-    brightnessctl
-    playerctl
+    brightnessctl         # waybar called for brightness screen
+    playerctl             # waybar called for music
     google-chrome
-    wireplumber
+    wireplumber 	  # waybar called for audio
+    networkmanagerapplet  # waybar called for network
   ];
 }

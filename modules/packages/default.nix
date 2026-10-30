@@ -4,7 +4,6 @@
 {
   imports = [
     ./systemPackages.nix
-    ./zsh.nix
     ./npm.nix
     ./gnupg.nix
     ./kitty.nix
