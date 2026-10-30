@@ -9,6 +9,7 @@ i18n.inputMethod = {
       qt6Packages.fcitx5-chinese-addons # 修正后的包名
       fcitx5-mozc
       fcitx5-gtk
+      kdePackages.fcitx5-configtool
     ];
 
     # 2. settings 下包含两个并列的部分
