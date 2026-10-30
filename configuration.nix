@@ -1,13 +1,12 @@
-# Top-level configuration: imports the hardware scan result and the
-# modular configuration. Replaces the old /etc/nixos/configuration.nix.
+# 通用配置：所有主机共享的模块集合（主机专属的硬件与驱动配置见 hosts/）。
 { ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./modules/base.nix
     ./modules/home-manager.nix
     ./modules/packages
     ./modules/desktop
+    ./modules/fonts
   ];
 }
