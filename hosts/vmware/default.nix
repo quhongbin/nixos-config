@@ -5,6 +5,8 @@
   # vmware derivers
   services.xserver.videoDrivers = [ "vmware" ];
   virtualisation.vmware.guest.enable = true;
+  # for google-chrome
+  nixpkgs.config.allowUnfree = true;
   # hostName
   networking.hostName = "nixos-vmware";
   # network proxy
@@ -13,6 +15,5 @@
   imports = [
     ./hardware-configuration.nix
     ../../configuration.nix
-    ../../modules/desktop/vmware.nix
   ];
 }

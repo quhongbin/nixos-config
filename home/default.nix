@@ -4,14 +4,21 @@
 {
   imports = [
     ./packages/lazygit.nix
-    ./package/neovim.nix
-    ./package/emacs.nix
-    ./package/zsh.nix
+    ./packages/neovim.nix
+    ./packages/emacs.nix
+    ./packages/zsh.nix
+    # user develop tools
+    ./develop/cpp.nix
+    ./develop/go.nix
+    ./develop/haskell.nix
+    ./develop/nix.nix
+    ./develop/rust.nix
     # user services
     ./services/swaybg.nix
     ./services/waybar.nix
     ./services/wofi.nix
-    ./services/i18n.nix
     ./services/mako.nix
+    # internationality
+    ./i18n.nix
   ];
 }
