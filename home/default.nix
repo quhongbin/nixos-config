@@ -3,14 +3,22 @@
 
 {
   imports = [
-    ./lazygit.nix
-    ./neovim.nix
-    ./swaybg.nix
-    ./waybar.nix
-    ./wofi.nix
-    ./zsh.nix
+    ./packages/lazygit.nix
+    ./packages/neovim.nix
+    ./packages/emacs.nix
+    ./packages/zsh.nix
+    # user develop tools
+    ./develop/cpp.nix
+    ./develop/go.nix
+    ./develop/haskell.nix
+    ./develop/nix.nix
+    ./develop/rust.nix
+    # user services
+    ./services/swaybg.nix
+    ./services/waybar.nix
+    ./services/wofi.nix
+    ./services/mako.nix
+    # internationality
     ./i18n.nix
-    ./emacs.nix
-    ./mako.nix
   ];
 }
