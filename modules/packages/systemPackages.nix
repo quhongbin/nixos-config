@@ -14,5 +14,7 @@
     google-chrome
     wireplumber 	  # waybar called for audio
     networkmanagerapplet  # waybar called for network
-  ];
+    pkg-config
+    libnotify            # notify lib
+];
 }
