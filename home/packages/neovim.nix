@@ -3,7 +3,7 @@
 { pkgs, ... }:
 
 let
-  configFiles = pkgs.fetchFromGitHub {
+  NeovimConfigFiles = pkgs.fetchFromGitHub {
     owner = "quhongbin";
     repo = "MyLazyVim";
     rev = "92fd569f2db6dc3fe865d4099219196448c2e2db";
@@ -13,7 +13,12 @@ in
 {
   programs.neovim = {
     enable = true;
+    home.file.".config/nvim".source = NeovimConfigFiles;
   };
-
-  home.file.".config/nvim".source = configFiles;
+  # lazyvim needed modules
+  home.packages = with pkgs;[
+    ripgrep
+    lua51Packages.lua
+    # C Compiler has been installed by another nix file
+  ];
 }

@@ -3,14 +3,15 @@
 
 {
   imports = [
-    ./lazygit.nix
-    ./neovim.nix
-    ./swaybg.nix
-    ./waybar.nix
-    ./wofi.nix
-    ./zsh.nix
-    ./i18n.nix
-    ./emacs.nix
-    ./mako.nix
+    ./packages/lazygit.nix
+    ./package/neovim.nix
+    ./package/emacs.nix
+    ./package/zsh.nix
+    # user services
+    ./services/swaybg.nix
+    ./services/waybar.nix
+    ./services/wofi.nix
+    ./services/i18n.nix
+    ./services/mako.nix
   ];
 }

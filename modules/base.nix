@@ -12,15 +12,15 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # 主机名。
-  networking.hostName = "nixos-1";
+  # hostName was setted by defferent hosts/* configuration
+  # networking.hostName = "nixos-1";
 
   # 使用 NetworkManager 管理网络连接。
   networking.networkmanager.enable = true;
 
-  # 网络代理。
-  networking.proxy.default = "http://192.168.3.17:7897";
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # 网络代理 is setted by various hosts
+  # networking.proxy.default = "http://192.168.3.17:7897";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # 时区。
   time.timeZone = "Asia/Shanghai";
@@ -33,9 +33,6 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # NVIDIA 专有驱动是 unfree 许可，需显式允许。
-  nixpkgs.config.allowUnfree = true;
 
   # 国际化。
   i18n.defaultLocale = "en_US.UTF-8";
