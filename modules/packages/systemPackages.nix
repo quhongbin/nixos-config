@@ -14,7 +14,7 @@
     google-chrome
     wireplumber 	  # waybar called for audio
     networkmanagerapplet  # waybar called for network
-    wqy_microhei
-    uim
-  ];
+    pkg-config
+    libnotify            # notify lib
+];
 }
