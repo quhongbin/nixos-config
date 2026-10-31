@@ -10,5 +10,7 @@
     ./wofi.nix
     ./zsh.nix
     ./i18n.nix
+    ./emacs.nix
+    ./mako.nix
   ];
 }
