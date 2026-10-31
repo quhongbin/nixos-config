@@ -14,12 +14,13 @@
 
   # 主机名。
   networking.hostName = "nixos-1";
+  networking.enableIPv6 = false;
 
   # 使用 NetworkManager 管理网络连接。
   networking.networkmanager.enable = true;
 
   # 网络代理。
-  networking.proxy.default = "http://192.168.3.17:7897";
+  networking.proxy.default = "http://192.168.1.4:7897";
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # 时区。
@@ -27,7 +28,6 @@
 
   # 软件源镜像。
   nix.settings.substituters = [
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://cache.nixos.org/"
   ];
