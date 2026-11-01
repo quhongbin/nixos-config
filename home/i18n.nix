@@ -22,7 +22,7 @@ i18n.inputMethod = {
           DefaultIM = "keyboard-us";
         };
         "Groups/0/Items/0".Name = "keyboard-us"; # 英文
-        "Groups/0/Items/1".Name = "pinyin";      # 中文（双拼）
+        "Groups/0/Items/1".Name = "shuangpin";      # 中文（双拼）
         "Groups/0/Items/2".Name = "mozc";        # 日文
       };
 

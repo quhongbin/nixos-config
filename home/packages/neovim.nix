@@ -19,6 +19,7 @@ in
   home.packages = with pkgs;[
     ripgrep
     lua51Packages.lua
+    fd
     # C Compiler has been installed by another nix file home/develop/cpp.nix
   ];
 }
