@@ -7,6 +7,7 @@
     ./packages/neovim.nix
     ./packages/emacs.nix
     ./packages/zsh.nix
+    ./packages/clash-verge-rev.nix
     # user develop tools
     ./develop/cpp.nix
     ./develop/go.nix

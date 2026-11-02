@@ -14,6 +14,7 @@ in
   programs.neovim = {
     enable = true;
   };
+
   home.file.".config/nvim".source = NeovimConfigFiles;
   # lazyvim needed modules
   home.packages = with pkgs;[
