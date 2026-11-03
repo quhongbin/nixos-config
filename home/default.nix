@@ -8,6 +8,7 @@
     ./packages/emacs.nix
     ./packages/zsh.nix
     ./packages/pnpm.nix
+    ./packages/clash-verge-rev.nix
     # user develop tools
     ./develop/cpp.nix
     ./develop/go.nix

@@ -9,6 +9,7 @@
     ./portal.nix
     ./polkit.nix
     ./niri.nix
+    ./bluetooth.nix
   ];
 
   # 通用图形栈（OpenGL/Vulkan），所有主机都需要。

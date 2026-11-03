@@ -14,11 +14,13 @@ in
   programs.neovim = {
     enable = true;
   };
+
   home.file.".config/nvim".source = NeovimConfigFiles;
   # lazyvim needed modules
   home.packages = with pkgs;[
     ripgrep
     lua51Packages.lua
+    fd
     # C Compiler has been installed by another nix file home/develop/cpp.nix
   ];
 }
