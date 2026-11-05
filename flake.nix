@@ -33,7 +33,13 @@
           specialArgs = baseSpecialArgs // { host = "laptop"; };
           modules = [
             ./hosts/laptop
-            home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager{
+              home-manager ={
+                extraSpecialArgs = {
+                  inherit pkgsUnstable;
+                };
+              };
+            }
           ];
         };
 
