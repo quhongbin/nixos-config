@@ -20,6 +20,7 @@
     ./services/waybar.nix
     ./services/wofi.nix
     ./services/mako.nix
+    ./services/emacs.nix
     # internationality
     ./i18n.nix
   ];

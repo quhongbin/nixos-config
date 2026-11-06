@@ -22,6 +22,11 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-label/NIX-STORE";
+      fsType = "ext4";
+      neededForBoot = true;
+    };
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
