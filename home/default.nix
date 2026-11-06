@@ -9,6 +9,7 @@
     ./packages/zsh.nix
     ./packages/pnpm.nix
     ./packages/clash-verge-rev.nix
+    ./packages/antigravity-cli.nix
     # user develop tools
     ./develop/cpp.nix
     ./develop/go.nix

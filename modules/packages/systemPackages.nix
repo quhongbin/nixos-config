@@ -16,5 +16,9 @@
     networkmanagerapplet  # waybar called for network
     pkg-config
     libnotify            # notify lib
-];
+  ];
+  environment.variables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+  };
 }
