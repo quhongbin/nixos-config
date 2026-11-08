@@ -2,10 +2,9 @@
 {
   systemd.user.services.emacs = {
     Unit = {
-      Description = "eamcs daemon for user";
-      After = [ "multi-user.target" ];
+      Description = "emacs daemon for user";
     };
-    Install.WantedBy = [ "multi-user.target" ];
+    Install.WantedBy = [ "default.target" ];
     Service = {
       ExecStart = "${lib.getExe pkgs.emacs} --fg-daemon";
       Restart = "on-failure";
