@@ -7,6 +7,7 @@
     syntaxHighlighting.enable = true;
 		enableCompletion = true;
 		autosuggestion.enable = true;
+    defaultKeymap = "emacs";
 
 		plugins = [
 			{
