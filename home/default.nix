@@ -10,6 +10,8 @@
     ./packages/pnpm.nix
     ./packages/clash-verge-rev.nix
     ./packages/antigravity-cli.nix
+    ./packages/codex.nix
+    ./packages/cc-switch.nix
     # user develop tools
     ./develop/cpp.nix
     ./develop/go.nix

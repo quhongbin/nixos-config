@@ -1,5 +1,5 @@
 # zsh 及其语法高亮。
-{ pkgs, ... }:
+{ pkgs,config, ... }:
 
 {
   programs.zsh = {
@@ -20,4 +20,7 @@
 		[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 	'';
   };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 }

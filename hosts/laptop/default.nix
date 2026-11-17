@@ -20,8 +20,16 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixos-home";
+  networking.enableIPv6 = false;
+  boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = 1;
+  boot.kernel.sysctl."net.ipv6.conf.default.disable_ipv6" = 1;
+
   networking.proxy.default = "http://192.168.1.4:7897";
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # 放行 Deskflow 端口
+  networking.firewall.allowedTCPPorts = [ 24800 ];
+  networking.firewall.allowedUDPPorts = [ 24800 ];
   imports = [
     ./hardware-configuration.nix
     ../../configuration.nix

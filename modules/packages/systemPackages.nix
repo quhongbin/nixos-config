@@ -16,6 +16,8 @@
     networkmanagerapplet  # waybar called for network
     pkg-config
     libnotify            # notify lib
+    libtool
+    unzip
   ];
   environment.variables = {
     EDITOR = "vim";
